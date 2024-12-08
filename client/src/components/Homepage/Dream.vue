@@ -53,6 +53,7 @@
 
 <script>
 export default {
+  name: 'Dream', 
   methods: {
     exploreMore() {
       const target = document.querySelector('.dream-section2');
