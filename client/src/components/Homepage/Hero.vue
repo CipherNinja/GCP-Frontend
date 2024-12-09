@@ -60,6 +60,7 @@
 
 <script>
 export default {
+  name: 'Hero',
 methods: {
   exploreMore() {
     const target = document.querySelector('.hero-section2');

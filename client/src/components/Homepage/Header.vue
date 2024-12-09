@@ -18,27 +18,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Navbar Links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a href="#" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Products</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">FAQ</a>
-          </li>
-        </ul>
+      <div class="collapse navbar-collapse" id="navbarNav"> 
+        <ul class="navbar-nav ms-auto"> 
+          <li class="nav-item"> <router-link to="/" class="nav-link">Home</router-link> </li> 
+          <li class="nav-item"> <router-link to="/about" class="nav-link">About</router-link> </li> 
+          <li class="nav-item"> <router-link to="/products" class="nav-link">Products</router-link> </li> 
+          <li class="nav-item"> <router-link to="/services" class="nav-link">Services</router-link> </li> 
+          <li class="nav-item"> <router-link to="/contact" class="nav-link">Contact</router-link> </li> 
+          <li class="nav-item"> <router-link to="/faq" class="nav-link">FAQ</router-link> </li> 
+        </ul> 
       </div>
     </div>
   </header>
