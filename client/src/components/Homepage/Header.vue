@@ -6,27 +6,20 @@
         <img src="@/assets/logo.png" alt="Logo" class="brand-logo" />
       </a>
       <!-- Toggler Button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Navbar Links -->
-      <div class="collapse navbar-collapse" id="navbarNav"> 
-        <ul class="navbar-nav ms-auto"> 
-          <li class="nav-item"> <router-link to="/" class="nav-link">Home</router-link> </li> 
-          <li class="nav-item"> <router-link to="/about" class="nav-link">About</router-link> </li> 
-          <li class="nav-item"> <router-link to="/products" class="nav-link">Products</router-link> </li> 
-          <li class="nav-item"> <router-link to="/services" class="nav-link">Services</router-link> </li> 
-          <li class="nav-item"> <router-link to="/contact" class="nav-link">Contact</router-link> </li> 
-          <li class="nav-item"> <router-link to="/faq" class="nav-link">FAQ</router-link> </li> 
-        </ul> 
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"> <router-link to="/" class="nav-link" exact>Home</router-link> </li>
+          <li class="nav-item"> <router-link to="/about" class="nav-link" exact>About</router-link> </li>
+          <li class="nav-item"> <router-link to="/products" class="nav-link" exact>Products</router-link> </li>
+          <li class="nav-item"> <router-link to="/services" class="nav-link" exact>Services</router-link> </li>
+          <li class="nav-item"> <router-link to="/contact" class="nav-link" exact>Contact</router-link> </li>
+          <li class="nav-item"> <router-link to="/faq" class="nav-link" exact>FAQ</router-link> </li>
+        </ul>
       </div>
     </div>
   </header>
@@ -36,14 +29,16 @@
 export default {
   name: "Header",
   mounted() {
-    // Ensure Bootstrap JS components work when Vue updates the DOM
-    const bootstrapCollapse = new window.bootstrap.Collapse(
-      document.querySelector('#navbarNav'),
-      {
-        toggle: false,
-      }
-    );
+    if (window.bootstrap) {
+      new window.bootstrap.Collapse(
+        document.querySelector("#navbarNav"),
+        { toggle: false }
+      );
+    } else {
+      console.error("Bootstrap is not loaded properly.");
+    }
   },
+
 };
 </script>
 
@@ -67,7 +62,8 @@ export default {
 
 /* Adjusted Logo Positioning */
 .navbar-brand {
-  margin-left: -80px; /* Moves the logo further left */
+  margin-left: -80px;
+  /* Moves the logo further left */
 }
 
 /* Navbar Links Styling */
