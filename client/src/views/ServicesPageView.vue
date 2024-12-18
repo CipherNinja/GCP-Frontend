@@ -6,10 +6,8 @@
       <!-- Render the API response in a paragraph -->
       <p v-if="message">{{ message }}</p> <!-- This will display the message from the API -->
 
-      <ProductDesc />
+      <Servicesmain />
 
-      <AppProduct/>
-      
       <!-- Render the Footer component -->
       <Footer />
   </div>
@@ -18,19 +16,17 @@
 <script>
 // Import the component
 import Header from '@/components/Homepage/Header.vue';
-import ProductDesc from '@/components/ProductPage/ProductDesc.vue';
-import AppProduct from '@/components/ProductPage/AppProduct.vue';
+import Servicesmain from '@/components/Servicespage/Servicesmain.vue';
 import Footer from '@/components/Homepage/Footer.vue';
 
 // Import Axios
 import axios from 'axios';
 
 export default {
-  name: 'ProductPageView',
+  name: 'ServicesPageView',
   components: {
       Header,
-      ProductDesc,
-      AppProduct,
+      Servicesmain,
       Footer
   },
   data() {

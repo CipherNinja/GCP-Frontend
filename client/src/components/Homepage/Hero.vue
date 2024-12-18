@@ -4,23 +4,16 @@
     <div class="elliptical-gradient"></div>
     <!-- Hero Section -->
       <div class="hero-section">
-          <!-- Hero Content -->
-          <div class="hero-content">
-            <p class="building-brand-image">
             <span class="text-wrapper-3">
               Building Brand Image
-            </span><br />
+            </span>
             <span class="text-wrapper-4">Passionately <i class="fa fa-star floating-star-1"></i></span>
-            
-
-          </p>
-              <p>We increase revenue and ensure sustainable long-term growth for your business through powerful Webflow websites.</p>
+              <p class="hero-txt">We increase revenue and ensure sustainable long-term growth for your business through powerful Webflow websites.</p>
               <button class="cta-button" @click="exploreMore">
                 <i class="fa fa-star floating-star-3"></i>
                 Explore More 
                 <i class="fa fa-star floating-star-2"></i>
               </button>
-          </div>
       </div>
 
     <!-- Brand Box -->
@@ -92,7 +85,7 @@ methods: {
   left: 0%; /* Adjust left position relative to the parent */ 
   width: 100%; /* Width of the gradient area */ 
   height: 100%; /* Height of the gradient area */ 
-  background: radial-gradient(ellipse 25% 25% at 50% 23%, #A1CDFF99, #111204); 
+  background: radial-gradient(ellipse 25vw 25vw at 50% 23%, #A1CDFF99, #111204); 
   z-index: 3; /* Ensure it appears on top */ 
   opacity: 0.6; /* Optional: Set opacity for blending effect */ 
 }
@@ -103,7 +96,7 @@ methods: {
   margin-left: 5px;
   font-size: 40px; /* Size of the icon */ 
   color: gold; /* Color of the icon */ 
-  z-index: 1000; /* Ensure it is on top */ 
+  z-index: 10; /* Ensure it is on top */ 
 }
 .floating-star-2 { 
   position: absolute;
@@ -111,7 +104,7 @@ methods: {
   margin-left: 10vw;
   font-size: 15px; /* Size of the icon */ 
   color: gold; /* Color of the icon */ 
-  z-index: 1000; /* Ensure it is on top */ 
+  z-index: 10; /* Ensure it is on top */ 
 }
 .floating-star-3 { 
   position: absolute;
@@ -119,9 +112,8 @@ methods: {
   margin-right: 10vw;
   font-size: 11px; /* Size of the icon */ 
   color: gold; /* Color of the icon */ 
-  z-index: 1000; /* Ensure it is on top */ 
+  z-index: 10; /* Ensure it is on top */ 
 }
-
 
 .hero-section{ 
 width: 100%; 
@@ -129,11 +121,8 @@ height: 24vw;
 background: #11120400;
 opacity: 0px;
 padding: 1px;
-z-index: 500;
+z-index: 10;
 margin-top: 60px;
-}
-
-.hero-section{
 flex: 1;
 display: flex;
 flex-direction: column;
@@ -142,9 +131,9 @@ align-content: center;
 align-self: center;
 justify-content: space-between;
 justify-content: center;
-gap: 20px;
 padding: 1px;
 }
+
 .hero-section2 {
 flex: 1;
 width: 90%;
@@ -157,48 +146,47 @@ justify-content: space-between;
 justify-content: center;
 gap: 20px;
 padding: 1px;
-z-index: 500;
+z-index: 10;
 }
 
-.hero-content .building-brand-image {
-  font-family: "Outfit-Bold", Helvetica;
-  font-size: 57.1px;
-  font-weight: 700;
-  left: auto;
-  letter-spacing: -1.71px;
-  line-height: 59.8px;
-  text-align: center;
-  top: 7%;
-  width: auto;
-}
-.hero-content .text-wrapper-3 {
-  font-size: 55.1px;
+.text-wrapper-3 {
+  font-size: 77.1px;
   color: #ffffff;
-  font-weight: bold;
-  letter-spacing: -0.98px;
+  font-family: Outfit;
+  font-weight: 700;
+  line-height: 65.77px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
-.hero-content .text-wrapper-4 {
-  font-size: 57.1px;
+.text-wrapper-4 {
+  font-size: 77.1px;
   color: #F0E002;
-  font-family: "Plus Jakarta Sans-ExtraBoldItalic", Helvetica;
+  font-family: Outfit;
   font-style: italic;
-  font-weight: bold;
-  letter-spacing: -0.98px;
-  position: relative; /* Relative positioning for the parent */ 
-  display: inline-block;
+  font-weight: 700;
+  line-height: 65.77px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  position: relative; /* Relative positioning for the parent */
 }
 
-.hero-content {
-flex: 1;
-max-width: 600px;
-text-align: center;
-}
-
-.hero-content p {
-font-size: 1.2rem;
-margin-bottom: 20px;
-color: #ffffff;
+.hero-txt{
+  font-family: Outfit;
+  color: #FFFFFFCC;
+  width: 100%;
+  max-width: 550px;
+  font-size: 16.95px;
+  font-weight: 400;
+  line-height: 15.73px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  padding: 40px;
 }
 
 .cta-button {
@@ -224,7 +212,7 @@ background: #F0E002;
   flex-direction: column;
   align-items: center; /* Centers items horizontally */
   width: 90%;
-  z-index: 500;
+  z-index: 10;
 }
 
 .brand-txt {
@@ -253,13 +241,14 @@ background: #F0E002;
   background-color: #222222; 
   border: 1px solid #333; 
   padding: 2px; 
-  margin: 0 4%; 
+  margin: 0 0; 
   border-radius: 20px; 
-  gap: 7vw; /* Gap proportional to the viewport width */ 
+  column-gap: 7vw; /* Gap proportional to the viewport width */ 
+  row-gap: 2vw;
 } 
 .brand-box img { 
   width: 8vw; /* Width proportional to the viewport width */ 
-  min-width: 70px; /* Minimum width to ensure images don't get too small */ 
+  min-width: 80px; /* Minimum width to ensure images don't get too small */ 
   padding: 1vw; /* Padding proportional to the viewport width */
 }
 
@@ -267,15 +256,15 @@ background: #F0E002;
   border-bottom: 3px solid #F0E002;
   margin: 20px 0;
   width: 90%;
-  z-index: 500;
+  z-index: 10;
 }
 
 .line-small {
   border-bottom: 3px solid #F0E002;
-  width: 3%;
-  margin-left: 3%;
-  margin-right: 3%;
-  z-index: 500;
+  width: 3vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  z-index: 10;
 }
 
 
@@ -305,24 +294,28 @@ color: #ffffff;
 }
 
 /* Responsive Design */
+@media (min-width: 569px) and (max-width: 1068px){
+  .elliptical-gradient {   background: radial-gradient(ellipse 60vw 60vw at 50% 23%, #A1CDFF99, #111204);  }
+
+}
+
 @media (max-width: 568px) {
-.hero-content .building-brand-image { font-size: calc(57.1px * 0.8); /* Reduce by 20% */ line-height: calc(59.8px * 0.8); } 
-.hero-content .text-wrapper-4 { font-size: calc(48.1px * 0.8); /* Adjust if necessary */ } 
-.hero-content .text-wrapper-3 { font-size: calc(52.1px * 0.8); /* Adjust if necessary */ } 
-.brand-txt { font-size: calc(14.2px * 0.75); line-height: calc(9.3px * 0.8); } 
-.hero-section2 h5 { font-size: calc(1.5rem * 0.8); /* Reduce by 20% */ } 
-.big { font-size: calc(2rem * 0.8); } /* Reduce by 20% */
+  .hero { padding: 8px; }
+  .elliptical-gradient {   background: radial-gradient(ellipse 80vw 80vw at 50% 23%, #A1CDFF99, #111204);  }
+  .text-wrapper-4 { font-size: 42px; line-height: 43.77px;  /* Adjust if necessary */ } 
+  .text-wrapper-3 { font-size: 45px; line-height: 44.77px;  /* Adjust if necessary */ }
+  .hero-section, .brand-container { width: 100%; } 
+  .brand-box {   column-gap: 2vw; /* Gap proportional to the viewport width */  }
+  .brand-box img {   min-width: 70px; /* Minimum width to ensure images don't get too small */ }
+  .brand-txt { font-size: calc(13.2px); line-height: calc(9.3px * 0.8); } 
+  .hero-section2 h5 { font-size: calc(1.5rem * 0.8); /* Reduce by 20% */ } 
+  .big { font-size: calc(2rem * 0.8); } /* Reduce by 20% */
 
 .hero-section, .hero-section2 {
   flex-direction: column;
-  gap: 15px;
 }
 
-.hero-content h1 {
-  font-size: 2rem;
-}
-
-.hero-content p, .normal {
+.normal {
   font-size: 1rem;
 }
 
