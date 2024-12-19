@@ -19,6 +19,10 @@
    - **URL**: `/api/contactus`
    - **Method**: `POST`
    - **Description**: Send the name, email, phone number, country, message to the api.
+5. **Submit Product Details**
+   - **URL**: `/api/product`
+   - **Method**: `POST`
+   - **Description**: Send the name, title, stock, mrp, original_price, categories and images of product to the api.
 
 ---
 
@@ -98,6 +102,34 @@
 ```json
 {
     "message": "Contact details submitted successfully."
+}
+```
+
+### Submit Product Details
+**Endpoint**: `POST /api/product`
+**Payload**:
+```json
+{
+    "name": "bottle wrapper",
+    "title": "bottle wrapper for all sizes",
+    "stock": "12000",
+    "mrp": "15",
+    "original_price": "27",
+    "categories": [
+        "small",
+        "medium",
+        "large"
+    ],
+    "images" : [
+        "image/1/file/route",
+        "image/2/file/route "
+    ]
+}
+```
+**Response**:
+```json
+{
+    "message": "Product created successfully"
 }
 ```
 

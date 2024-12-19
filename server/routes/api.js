@@ -6,6 +6,10 @@ const router = express.Router();
 // Importing the models 
 const FAQModel = require("../models/faq.models");
 const ContactUsModel = require("../models/contactus.models");
+const ProductModel = require("../models/product.models");
+
+// Importing upload middleware
+const upload = require("../middlewares/multer.middleware");
 
 // GET API to fetch all FAQs with visibility true
 // Responds with a list of FAQ queries and answers
@@ -118,6 +122,32 @@ router.post("/contactus", async (req, res) => {
     return res.status(500).json({ error: "Internal server error" });
   }
 
+});
+
+// POST API to submit product details
+router.post('/product', upload.array('images'), async (req, res) => {
+
+    const { name, title, stock, mrp, original_price, categories } = req.body;
+
+    if (!name || !title || !stock || !mrp || !original_price || !categories) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    const parsedCategories = typeof categories === 'string' ? JSON.parse(categories) : categories;
+
+    const imagePaths = req.files.map(file => file.path);
+  try {
+    await ProductModel.create({
+      name, title, stock, mrp, original_price, 
+      categories : parsedCategories,
+      images: imagePaths,
+    });
+
+    res.status(201).json({ message: 'Product created successfully'});
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error', error: error.message });
+  }
 });
 
 module.exports = router;
