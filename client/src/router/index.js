@@ -31,11 +31,11 @@ const routes = [
   {
     path: '/products',
     name: "Products",
-    component: productpageview, // This is where the About component is now rendered
+    component: productpageview,
     },{
     path: '/products/:id',
     name: "Productdetails",
-    component: productdetails, // This is where the About component is now rendered
+    component: productdetails, 
   },
   {
     path: "/services", // Add the Services route

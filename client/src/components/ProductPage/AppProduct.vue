@@ -15,7 +15,8 @@
       <div 
         class="Product" 
         v-for="product in filteredProducts" 
-        :key="product.id">
+        :key="product.id"
+        @click="navigateToProduct(product.id)">
         <div class="Productimage">
           <img :src="product.image" :alt="product.name">
         </div>
@@ -76,7 +77,10 @@
           product.name.toLowerCase().includes(query) || 
           product.description.toLowerCase().includes(query)
         );
-      }
+      },
+      navigateToProduct(id) {
+        this.$router.push(`/products/${id}`);
+      },
     },
     mounted() {
       // Initialize with sample data
@@ -242,6 +246,7 @@
   
   /* Product Card Styling */
   .Product {
+    cursor: pointer;
     width: 23%;
     border: 1px solid #ddd;
     border-radius: 10px;
