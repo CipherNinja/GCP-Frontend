@@ -11,6 +11,9 @@ app.use(cors());
 // Middleware for parsing JSON
 app.use(express.json());
 
+// Serve static files from the "media" directory
+app.use('/media', express.static(path.join(__dirname, 'media')));
+
 // Use API routes (like /api)
 app.use('/api', apiRoutes);
 

@@ -8,7 +8,7 @@ const FAQModel = require("../models/faq.models");
 const ContactUsModel = require("../models/contactus.models");
 const ProductModel = require("../models/product.models");
 
-// Importing upload middleware
+// Importing middlewares
 const upload = require("../middlewares/multer.middleware");
 
 // GET API to fetch all FAQs with visibility true
@@ -149,5 +149,24 @@ router.post('/product', upload.array('images'), async (req, res) => {
     res.status(500).json({ message: 'Internal server error', error: error.message });
   }
 });
+
+// GET API to fetch all product details
+router.get('/product/:id', async(req, res)=>{
+
+  const { id } = req.params;
+
+  try {
+    const product = await ProductModel.findByPk(id);
+
+    if (!product) {
+      return res.status(404).json({ message: "Product not found." });
+    }
+
+    res.status(200).json({ product });
+  } catch (err) {
+    console.error("Error fetching products:", err);
+    res.status(500).json({ message: "Internal server error", error: err.message });
+  }
+})
 
 module.exports = router;
